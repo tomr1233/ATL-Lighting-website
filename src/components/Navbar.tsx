@@ -30,7 +30,7 @@ export default function Navbar({ isScrolled, isMenuOpen, setIsMenuOpen }: Navbar
     setSearchExpanded(true);
     setTimeout(() => {
       searchInputRef.current?.focus();
-    }, 100);
+    }, 300); // Increased timeout to match animation duration
   };
 
   const handleSearchCollapse = () => {
@@ -129,6 +129,7 @@ export default function Navbar({ isScrolled, isMenuOpen, setIsMenuOpen }: Navbar
                     activeDropdown === 'home' ? 'rotate-180' : ''
                   }`} />
                 </button>
+                
                 {showMore && (
                   <div className="absolute top-full right-0 mt-1 w-64 bg-slate-800/95 backdrop-blur-sm border border-slate-700/50 rounded-lg shadow-xl py-2 z-30">
                     <a
@@ -152,45 +153,47 @@ export default function Navbar({ isScrolled, isMenuOpen, setIsMenuOpen }: Navbar
           {/* Right Section - Search and Mobile Menu */}
           <div className="flex items-center space-x-4 flex-shrink-0">
             {/* Expandable Search Bar - Hidden on mobile */}
-            <div className="hidden md:flex items-center search-container">
-              <div className={`relative transition-all duration-300 ease-in-out ${
-                searchExpanded ? 'w-[500px]' : 'w-auto'
+            <div className="hidden md:block search-container">
+              <div className={`relative transition-all duration-300 ease-in-out overflow-hidden ${
+                searchExpanded ? 'w-[400px]' : 'w-10'
               }`}>
-                {!searchExpanded ? (
-                  <button
-                    onClick={handleSearchExpand}
-                    className="p-2 text-slate-300 hover:text-white transition-colors duration-200"
-                  >
-                    <Search className="h-5 w-5" />
-                  </button>
-                ) : (
-                  <div className="flex items-center">
-                    <div className="relative flex-1">
-                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <Search className="h-4 w-4 text-slate-400" />
-                      </div>
-                      <input
-                        ref={searchInputRef}
-                        type="text"
-                        placeholder="Search..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Escape') {
-                            handleSearchCollapse();
-                          }
-                        }}
-                        className="bg-slate-800/50 border border-slate-600/50 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500/50 transition-all duration-200 w-full"
-                      />
-                    </div>
+                <div className={`flex items-center ${searchExpanded ? '' : 'justify-center'}`}>
+                  {!searchExpanded ? (
                     <button
-                      onClick={handleSearchCollapse}
-                      className="ml-2 p-2 text-slate-300 hover:text-white transition-colors duration-200"
+                      onClick={handleSearchExpand}
+                      className="p-2 text-slate-300 hover:text-white transition-colors duration-200"
                     >
-                      <X className="h-4 w-4" />
+                      <Search className="h-5 w-5" />
                     </button>
-                  </div>
-                )}
+                  ) : (
+                    <>
+                      <div className="relative flex-1">
+                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                          <Search className="h-4 w-4 text-slate-400" />
+                        </div>
+                        <input
+                          ref={searchInputRef}
+                          type="text"
+                          placeholder="Search..."
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Escape') {
+                              handleSearchCollapse();
+                            }
+                          }}
+                          className="bg-slate-800/50 border border-slate-600/50 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500/50 transition-all duration-200 w-full"
+                        />
+                      </div>
+                      <button
+                        onClick={handleSearchCollapse}
+                        className="ml-2 p-2 text-slate-300 hover:text-white transition-colors duration-200 flex-shrink-0"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
 
