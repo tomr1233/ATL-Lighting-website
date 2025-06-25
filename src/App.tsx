@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import VideoSection from './components/VideoSection';
 import ServicesSection from './components/ServicesSection';
+import DisplayCards from './components/DisplayCards';
+import EbookSection from './components/EbookSection';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -28,6 +30,8 @@ function App() {
       <HeroSection />
       <VideoSection />
       <ServicesSection />
+      <DisplayCards />
+      <EbookSection />
     </div>
   );
 }
