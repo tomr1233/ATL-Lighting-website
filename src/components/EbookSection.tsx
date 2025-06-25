@@ -13,7 +13,7 @@ export default function EbookSection() {
             
             {/* Ebook Cover Image */}
             <img 
-              src="https://lh6.googleusercontent.com/uqosJgkY2FV_-zycFyTWLwT5kvzJoo52ffXCENuZcWnmBOWa443TQwV8cYUxxT3T4v7unqX4WSoS4kNhSHqHAqCnb6igy6eRZASGlzBFqZ1nxriTRjhuNh9iC64gARnjomdDqI1Yhyz6gi72eoeLYXxnsL1clRPXmRBQlNn8GV1EkKPthOR7wQ=w1280" 
+              src="https://imagesexpresstxt.s3.ap-southeast-2.amazonaws.com/E-book+cover.png" 
               alt="Cover of The Future of Marketing Ebook"
               className="relative w-full h-auto rounded-xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
             />
