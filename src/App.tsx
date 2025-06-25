@@ -5,6 +5,14 @@ import VideoSection from './components/VideoSection';
 import ServicesSection from './components/ServicesSection';
 import DisplayCards from './components/DisplayCards';
 import EbookSection from './components/EbookSection';
+import Footer from './components/Footer';
+import PromoImageSection from './components/PromoImageSection';
+import GlobalReachSection from './components/GlobalReachSection';
+import AnotherVideoSection from './components/AnotherVideoSection';
+import AnotherDisplayCardsSection from './components/AnotherDisplayCardsSection';
+import AnotherPromoImageSection from './components/AnotherPromoImage';
+import ContactOptions from './components/ContactOptions';
+import ProductNavigation from './components/ProductNavigation';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -32,6 +40,14 @@ function App() {
       <ServicesSection />
       <DisplayCards />
       <EbookSection />
+      <PromoImageSection />
+      <GlobalReachSection />
+      <AnotherVideoSection />
+      <AnotherDisplayCardsSection />
+      <AnotherPromoImageSection />
+      <ContactOptions />
+      <ProductNavigation />
+      <Footer />
     </div>
   );
 }

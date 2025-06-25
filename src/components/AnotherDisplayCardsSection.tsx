@@ -7,53 +7,43 @@ interface DisplayCard {
   icon: React.ReactNode;
 }
 
-export default function DisplayCards() {
+export default function AnotherDisplayCardsSection() {
   const displayCards: DisplayCard[] = [
     {
-      title: "Displays For Exhibitions",
+      title: "ATL Blog Post & News",
       image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80",
       icon: <Monitor className="h-5 w-5" />
     },
     {
-      title: "Indoor LED Screens",
-      image: "https://images.unsplash.com/photo-1598986646512-9330bcc4c0dc?w=800&q=80",
+      title: "Contact Us",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
       icon: <Tv className="h-5 w-5" />
     },
     {
-      title: "Displays For Retail",
+      title: "Why Buy From Us",
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
       icon: <ShoppingBag className="h-5 w-5" />
     },
     {
-      title: "Outdoor LED Screens",
+      title: "Our Company Profile",
       image: "https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?w=800&q=80",
       icon: <Projector className="h-5 w-5" />
     },
     {
-      title: "OLED Screens",
+      title: "FAQs Before You Buy",
       image: "https://images.unsplash.com/photo-1598986646512-9330bcc4c0dc?w=800&q=80",
       icon: <Sparkles className="h-5 w-5" />
     },
     {
-      title: "HoloFlex Transparent Video Film",
+      title: "Our Number 1 Sale Product to USA in 2024",
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
       icon: <Film className="h-5 w-5" />
     }
   ];
 
   return (
-    <div className="bg-slate-900">
+    <div className="bg-slate-900 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our Display Solutions
-          </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            Explore our comprehensive range of cutting-edge display technologies designed to meet your every need
-          </p>
-        </div>
-
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayCards.map((card, index) => (
@@ -95,7 +85,6 @@ export default function DisplayCards() {
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );
